@@ -84,10 +84,10 @@ export default function Homepage() {
                   <input 
                     type="email" 
                     placeholder="Email" 
-                    className="flex-grow py-3 px-4 rounded-full border border-gray-200 outline-none bg-white text-black placeholder-gray-500" 
+                    className="flex-grow py-3 px-4 rounded-lg border border-gray-200 outline-none bg-white text-black placeholder-gray-500" 
                   />
                   <button 
-                    className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-800">
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800">
                     Submit
                   </button>
                 </div>

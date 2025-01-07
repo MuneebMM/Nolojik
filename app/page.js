@@ -17,7 +17,6 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar/>
             {/* Move the code below Navbar to above Joinus */}
             <Homepage/>
             <Joinus/>

@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation'; // Import usePathname
 import { FiMenu, FiX } from 'react-icons/fi';
 
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
@@ -28,17 +30,49 @@ export default function Navbar() {
       <div
         className={`${
           navOpen ? 'flex' : 'hidden'
-        } md:flex flex-col md:flex-row items-center gap-y-6 md:gap-x-8 mt-4 md:mt-0 md:order-none space-x-8`}>
-        <Link href="/Homepage" className="nav-link hover:text-blue-400">
+        } md:flex flex-col md:flex-row items-center gap-y-6 md:gap-x-8 mt-4 md:mt-0 md:order-none space-x-8`}
+      >
+        <Link
+          href="/Homepage"
+          className={` ${
+            pathname === '/Homepage' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'
+          }`}
+        >
           Home
         </Link>
-        <Link href="/Service" className="nav-link hover:text-blue-400">
+        <Link
+          href="/Service"
+          className={` ${
+            pathname === '/Service' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'
+          }`}
+        >
           Service
         </Link>
-        <Link href="/About" className="nav-link hover:text-blue-400">
-          About Us
-        </Link>
-        <Link href="/Blog" className="nav-link hover:text-blue-400">
+        {pathname === '/Blog' ? (
+          <Link
+            href="/Products"
+            className={` ${
+              pathname === '/Products' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'
+            }`}
+          >
+            Products
+          </Link>
+        ) : (
+          <Link
+            href="/About"
+            className={` ${
+              pathname === '/About' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'
+            }`}
+          >
+            About Us
+          </Link>
+        )}
+        <Link
+          href="/Blog"
+          className={`${
+            pathname === '/Blog' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'
+          }`}
+        >
           Blog
         </Link>
       </div>
@@ -49,9 +83,11 @@ export default function Navbar() {
       </div>
 
       {/* Right Section - Buttons */}
-      <div className={`${
+      <div
+        className={`${
           navOpen ? 'flex' : 'hidden'
-        } md:flex space-x-4 mt-4 md:mt-0`}>
+        } md:flex space-x-4 mt-4 md:mt-0`}
+      >
         <Link href="/RequestDemo">
           <button className="px-8 py-2 rounded hover:bg-blue-700 hover:text-white border border-blue-500">
             Request a Demo

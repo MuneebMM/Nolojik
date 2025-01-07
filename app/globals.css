@@ -4,7 +4,8 @@
 
 .nav-link {
     position: relative;
-    padding-bottom: 4px; /* Add some space for the dot */
+    padding-bottom: 4px;
+     /* Add some space for the dot */
   }
   
   .nav-link:hover::after {
