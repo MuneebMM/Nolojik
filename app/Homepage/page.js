@@ -5,6 +5,12 @@ import { useEffect, useState } from 'react';
 import Joinus from "../components/Joinus";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Outfit } from 'next/font/google';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 
 export default function Homepage() {
     const [isClient, setIsClient] = useState(false);
@@ -12,36 +18,13 @@ export default function Homepage() {
     useEffect(() => {
         setIsClient(true);
     }, []);
-
-    const cardsData = [
-      {
-        profileImage: '/Ellipse7.png',
-        name: 'Zoeb Itarsiwala',
-        username: 'WPSL',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-        date: 'Jan 12, 2024',
-      },
-      {
-        profileImage: '/Ellipse7.png',
-        name: 'Saravanan Murugan',
-        username: 'Wolf',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-        date: 'Jan 12, 2024',
-      },
-      {
-        profileImage: '/Ellipse7.png',
-        name: 'Mohammed Myeen',
-        username: 'CEO',
-        comment: "Just started using Poppins for data analytics and it's a game-changer! The AI-powered calculations and predictions help me stay ahead of market trends. Just started using Poppins for data analytics and it's a game-changer! The AI-powered calculations and predictions help me stay ahead of market trends. #DataAnalytics #AI #Marketing",
-        date: 'Jan 12, 2024',
-      },
-    ];
+    
+    const cardsData = [/* ... your existing cardsData ... */];
   
-    // Reusable card component
     const Card = ({ profileImage, name, username, comment, date }) => (
-      <div className="border-dashed border-2 border-gray-300 rounded-lg p-4 mb-4">
+      <div className="border-dashed border-2 border-gray-300 rounded-lg p-4 mb-4 w-full">
         <div className="flex items-center mb-3">
-          <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
+          <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
             <Image
               src={profileImage || '/default-profile.png'}
               alt="Profile"
@@ -54,149 +37,142 @@ export default function Homepage() {
             <p className="text-sm text-gray-500">@{username}</p>
           </div>
         </div>
-        <p className="text-gray-700">{comment}</p>
+        <p className="text-gray-700 text-sm md:text-base">{comment}</p>
         <p className="text-sm text-gray-400 mt-3">{date}</p>
       </div>
     );
 
     return (
-        <div>
+        <main className={outfit.className}>
           <Navbar/>
+          
+          {/* Hero Section */}
           <section
-            className="w-full h-screen bg-cover bg-center relative"
+            className="w-full min-h-screen bg-cover bg-center relative px-4 md:px-8"
             style={{ backgroundImage: "url('./wallpaper1.jpg')" }}
           >
-              {/* Overlay */}
               <div className="absolute inset-0"></div>
-
-              {/* Content on the Wallpaper */}
-              <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-                {/* Main Headline */}
-                <h1 className="text-3xl md:text-6xl font-bold mb-6 font-sans">
-                  Your Vision Our Expertise,<br/> Crafting Tomorrow’s <span className="text-gray-400">Apps Today</span>
+              <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 font-sans px-4">
+                  Your Vision Our Expertise,<br className="hidden md:block"/> Crafting Tomorrows <span className="text-gray-400">Apps Today</span>
                 </h1>
-                {/* Sub Headline */}
-                <p className="text-lg md:text-xl mb-8 max-w-2xl">
+                <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 max-w-2xl px-4">
                   Empower Teams, Streamline Workflows, and Opt for the Right Tech. We Make Digital Transformation Seamless.
                 </p>
-                {/* Input and Button */}
-                <div className="flex items-center justify-center space-x-2 max-w-lg w-full">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 w-full max-w-lg px-4">
                   <input 
                     type="email" 
                     placeholder="Email" 
-                    className="flex-grow py-3 px-4 rounded-lg border border-gray-200 outline-none bg-white text-black placeholder-gray-500" 
+                    className="w-full md:flex-grow py-3 px-4 rounded-lg border border-gray-200 outline-none bg-white text-black placeholder-gray-500" 
                   />
-                  <button 
-                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800">
+                  <button className="w-full md:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800">
                     Submit
                   </button>
                 </div>
               </div>
           </section>
 
-          {/* Trusted by Top-tier Companies Section */}
-          <section className="w-full py-16 flex flex-col items-center">
-              <h2 className="text-2xl md:text-4xl font-semibold mb-8 text-center">Trusted by Top-tier Product Companies</h2>
-              <div className="flex flex-wrap justify-center items-center space-x-8">
-                <div className="w-40 h-20 relative">
-                  <Image src="/bcs.png" alt="Company Logo 1" layout="fill" objectFit="contain" />
+          {/* Companies Section */}
+          <section className="w-full py-12 md:py-16 flex flex-col items-center px-4">
+              <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold mb-6 md:mb-8 text-center">
+                Trusted by Top-tier Product Companies
+              </h2>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
+                <div className="w-32 md:w-40 h-16 md:h-20 relative">
+                  <Image src="/bcs.png" alt="Company Logo 1" fill objectFit="contain" />
                 </div>
-                <div className="w-40 h-20 relative">
-                  <Image src="/wpsl.png" alt="Company Logo 2" layout="fill" objectFit="contain" />
+                <div className="w-32 md:w-40 h-16 md:h-20 relative">
+                  <Image src="/wpsl.png" alt="Company Logo 2" fill objectFit="contain" />
                 </div>
               </div>
           </section>
 
-          <div className="flex flex-col items-center justify-start bg-gray-50">
-            {/* Top Text */}
-            <div className="pt-8">
-              <p className="text-sm md:text-base text-gray-500 text-center">
-                Your next-gen software partner
-              </p>
-            </div>
-            {/* Main Heading */}
-            <div className="mt-4 px-4 text-center">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
+          {/* Integration Section */}
+          <div className="flex flex-col items-center justify-start bg-gray-50 px-4 py-8 md:py-12">
+            <p className="text-sm md:text-base text-gray-500 text-center">
+              Your next-gen software partner
+            </p>
+            <div className="mt-4 text-center">
+              <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-800">
                 Integrations to platforms that <span className="text-blue-500">power your</span>
               </h1>
-              <h1 className="text-3xl md:text-5xl font-bold py-1 text-blue-500">
+              <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold py-1 text-blue-500">
                 business
               </h1>
             </div>
-
-            {/* Subtext */}
-            <div className="mt-4 px-4 max-w-3xl text-center">
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                We seamlessly integrate Design, Coding, Business Strategy, and Data
-                Analytics to fast-track your Digital transformation journey.
+            <div className="mt-4 max-w-3xl text-center px-4">
+              <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
+                We seamlessly integrate Design, Coding, Business Strategy, and Data Analytics 
+                to fast-track your Digital transformation journey.
               </p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center bg-gray-50 w-full py-11"> {/* Removed unnecessary padding/margin */}
-              <div className="w-full px-4 md:px-6 flex flex-col md:flex-row items-center justify-center max-w-6xl">
-                {/* Left Div */}
-                <div className="flex-1 px-6">
-                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
-                    Advance Analytics
-                  </h2>
-                  <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">
-                    Say goodbye to endless hours spent searching for solutions and struggling with syntax.
-                  </p>
-                  <div className="space-y-2 flex flex-col">
-                    <button className="w-full md:w-auto px-6 py-3 rounded-md bg-white text-black border border-gray-300 hover:bg-gray-100 transition">
-                      Innovative Design
-                    </button>
-                    <button className="w-full md:w-auto px-6 py-3 rounded-md bg-white text-black border border-gray-300 hover:bg-gray-100 transition">
-                      Agile Development
-                    </button>
-                    <button className="w-full md:w-auto px-6 py-3 rounded-md bg-white text-black border border-gray-300 hover:bg-gray-100 transition">
-                      Customer Focus
-                    </button>
+          {/* Analytics Section */}
+          <div className="bg-gray-50 w-full py-8 md:py-11 px-4">
+              <div className="w-full max-w-6xl mx-auto">
+                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                  {/* Left Content */}
+                  <div className="w-full md:w-1/2 space-y-4">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">
+                      Advance Analytics
+                    </h2>
+                    <p className="text-gray-600 text-sm md:text-base lg:text-lg mb-4 leading-relaxed">
+                      Say goodbye to endless hours spent searching for solutions and struggling with syntax.
+                    </p>
+                    <div className="space-y-3">
+                      <button className="w-full px-6 py-3 rounded-md bg-white text-black border border-gray-300 hover:bg-gray-100 transition">
+                        Innovative Design
+                      </button>
+                      <button className="w-full px-6 py-3 rounded-md bg-white text-black border border-gray-300 hover:bg-gray-100 transition">
+                        Agile Development
+                      </button>
+                      <button className="w-full px-6 py-3 rounded-md bg-white text-black border border-gray-300 hover:bg-gray-100 transition">
+                        Customer Focus
+                      </button>
+                    </div>
                   </div>
-                </div>
 
-                {/* Right Div */}
-                <div className="flex-1 relative h-80 px-6">
-                  {/* First Image */}
-                  <div className="absolute bottom-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/Rectangle16.jpg"
-                      alt="Image 1"
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-lg"
-                    />
-                  </div>
-                  {/* Second Image */}
-                  <div className="absolute bottom-8 left-4 w-[90%] h-[90%] rounded-lg overflow-hidden shadow-lg z-10">
-                    <Image
-                      src="/Rectangle18.jpg"
-                      alt="Image 2"
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-lg"
-                    />
-                  </div>
-                  {/* Third Image */}
-                  <div className="absolute bottom-16 left-8 w-[80%] h-[80%] rounded-lg overflow-hidden shadow-lg z-20">
-                    <Image
-                      src="/Rectangle17.jpg"
-                      alt="Image 3"
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-lg"
-                    />
+                  {/* Right Images */}
+                  <div className="w-full md:w-1/2 h-80 relative">
+                    <div className="absolute bottom-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-lg">
+                      <Image
+                        src="/Rectangle16.jpg"
+                        alt="Image 1"
+                        fill
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="absolute bottom-8 left-4 w-[90%] h-[90%] rounded-lg overflow-hidden shadow-lg z-10">
+                      <Image
+                        src="/Rectangle18.jpg"
+                        alt="Image 2"
+                        fill
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="absolute bottom-16 left-8 w-[80%] h-[80%] rounded-lg overflow-hidden shadow-lg z-20">
+                      <Image
+                        src="/Rectangle17.jpg"
+                        alt="Image 3"
+                        fill
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
           </div>
 
-          <div className="my-14 px-4 text-center">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
-                Elevate Your Digital Presence with Our Expert  
+          {/* Services Section */}
+          <div className="my-8 md:my-14 px-4 text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-800">
+                Elevate Your Digital Presence with Our Expert
               </h2>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-800 mt-2">
                 Services Dynamic Web & Mobile Solutions
               </h2>
           </div>
@@ -512,6 +488,6 @@ export default function Homepage() {
             <Footer/>
 
 
-        </div>
+        </main>
     );
 }

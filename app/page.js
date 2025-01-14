@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Joinus from "./components/Joinus";
 import Footer from "./components/Footer";
+import link from 'next/link';
 import Navbar from "./components/Navbar";
 // Import Homepage
 import Homepage from "./Homepage/page";
+
 
 export default function Home() {
     const [isClient, setIsClient] = useState(false);
@@ -14,14 +16,14 @@ export default function Home() {
     useEffect(() => {
         setIsClient(true);
     }, []);
+        
 
     return (
-        <div>
+        <main>
             {/* Move the code below Navbar to above Joinus */}
             <Homepage/>
-            <Joinus/>
-            <Footer/>
-        </div>
+           
+        </main>
     );
 }
 

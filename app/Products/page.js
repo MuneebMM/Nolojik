@@ -39,10 +39,10 @@ export default function Products() {
           <h2 className="text-2xl md:text-4xl font-semibold mb-8 text-center">Trusted by Top-tier Product Companies</h2>
           <div className="flex flex-wrap justify-center items-center space-x-8">
             <div className="w-40 h-20 relative">
-              <Image src="/bcs.png" alt="Company Logo 1" layout="fill" objectFit="contain" />
+              <Image src="/bcs.png" alt="Company Logo 1" fill objectFit="contain" />
             </div>
             <div className="w-40 h-20 relative">
-              <Image src="/wpsl.png" alt="Company Logo 2" layout="fill" objectFit="contain" />
+              <Image src="/wpsl.png" alt="Company Logo 2" fill objectFit="contain" />
             </div>
           </div>
       </section>
@@ -171,7 +171,7 @@ export default function Products() {
           <Image
             src="/Rectanglebg.png" 
             alt="Plane"
-            layout="fill" // Fill the container
+            fill // Fill the container
             objectFit="cover" // Cover the container while maintaining aspect ratio
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full md:w-[1000px]"> {/* Adjust diagram width */}
@@ -234,7 +234,7 @@ export default function Products() {
           height={1000} 
         />
       </div>
-      <div className="relative min-h-screen w-screen">
+      <div className="relative min-h-screen w-screen mb-20">
         
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-3xl font-bold text-blue-500 mb-4 pt-28">Reach Out to Us</h1>
@@ -243,7 +243,7 @@ export default function Products() {
             specialize in tailoring solutions to meet your business needs.
           </p>
 
-          <div className="flex flex-col md:flex-row gap-8 py-20"> {/* Responsive flex direction */}
+          <div className="flex flex-col md:flex-row gap-8"> {/* Responsive flex direction */}
 
             {/* Left Div */}
             <div className="space-y-6 w-full lg:w-1/2">

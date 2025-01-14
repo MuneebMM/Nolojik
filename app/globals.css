@@ -1,7 +1,15 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Apply Outfit font to the entire body */
+body {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 .nav-link {
     position: relative;
     padding-bottom: 4px;
