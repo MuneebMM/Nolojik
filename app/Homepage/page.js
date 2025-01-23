@@ -410,7 +410,7 @@ export default function Homepage() {
               {/* Cards Container */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                 {/* Card 1 */}
-                <div className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md">
+                <div className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
                   <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                     <Image
                       src="/RectangleImage1.png"
@@ -434,7 +434,7 @@ export default function Homepage() {
                 </div>
 
                 {/* Card 2 */}
-                <div className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md">
+                <div className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
                   <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                     <Image
                       src="/RectangleImage2.png"
@@ -458,7 +458,7 @@ export default function Homepage() {
                 </div>
 
                 {/* Card 3 */}
-                <div className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md">
+                <div className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
                   <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                     <Image
                       src="/RectangleImage3.png"
