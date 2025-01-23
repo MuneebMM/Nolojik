@@ -7,7 +7,7 @@ export default function JoinUs() {
         style={{ backgroundImage: "url('/wallpaper1.jpg')" }}
         >
         {/* Content Wrapper */}
-        <div className="text-center bg-transparent backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-2xl">
+        <div className="text-center bg-transparent backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
             {/* Heading */}
             <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Join Us on <span className="text-blue-600">Your Innovation Journey</span>
