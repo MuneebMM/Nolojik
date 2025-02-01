@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -71,7 +71,6 @@ const BlogPage = () => {
                 text-sm 
                 md:text-lg
                 text-center
-                space-x-10
               ">
                 {filterLinks.map((link) => {
                   const isActive = pathname === link.href;
@@ -102,14 +101,14 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Rest of the code remains the same as in the previous artifact */}
-      <div className="container mx-auto px-4 md:px-16 py-4">
+      {/* Blog Cards Section */}
+      <div className="container mx-auto px-4 md:px-16 py-8">
         {/* Cards Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3, 4, 5, 6].map((card, index) => (
             <div 
               key={index} 
-              className="flex flex-col items-start p-4 text-left rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+              className="flex flex-col items-start p-6 text-left rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
               <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                 <Image

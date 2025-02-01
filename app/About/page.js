@@ -9,11 +9,11 @@ const AboutPage = () => {
         <div>
             <Navbar />
             {/* Hero Section */}
-            <div className="container mx-auto px-10 py-16 lg:px-16">
-                <div className="flex flex-col md:flex-row justify-between gap-2">
+            <div className="container mx-auto px-4 sm:px-10 lg:px-16 py-8 sm:py-16">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     {/* Text Section */}
-                    <div className="w-auto md:w-auto font-sans py-44 pl-14">
-                        <h1 className="text-6xl font-bold leading-tight">
+                    <div className="w-full md:w-1/2 font-sans py-8 md:py-44 pl-0 md:pl-14">
+                        <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold leading-tight">
                             Discover Our Journey
                             <br />
                             Elevating Innovation,
@@ -23,9 +23,9 @@ const AboutPage = () => {
                     </div>
 
                     {/* Image Grid Section - Hidden on Mobile */}
-                    <div className="hidden md:flex w-auto md:w-auto justify-between px-11 gap-x-4">
+                    <div className="hidden md:flex w-full md:w-1/2 justify-between gap-x-4">
                         {/* First tall image */}
-                        <div className="w-auto">
+                        <div className="w-1/3">
                             <Image
                                 src="/Elevating1.png"
                                 alt="Rocket Image"
@@ -36,25 +36,25 @@ const AboutPage = () => {
                         </div>
 
                         {/* Middle column with stacked images */}
-                        <div className="w-auto flex flex-col gap-y-8">
+                        <div className="w-1/3 flex flex-col gap-y-4">
                             <Image
                                 src="/Elevating2.png"
                                 alt="Lightbulb Image"
                                 width={180}
-                                height={10}
+                                height={160}
                                 className="object-cover"
                             />
                             <Image
                                 src="/Elevating3.png"
                                 alt="Graph Image"
                                 width={180}
-                                height={190}
+                                height={160}
                                 className="object-cover"
                             />
                         </div>
 
                         {/* Last tall image */}
-                        <div className="w-auto">
+                        <div className="w-1/3">
                             <Image
                                 src="/Elevating4.png"
                                 alt="Arrow Stairs Image"
@@ -66,6 +66,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div>
+
             {/* Welcome Section - Mobile Responsive */}
             <div className="px-4 text-center py-8">
                 <h1 className="text-2xl md:text-5xl font-bold text-gray-800">

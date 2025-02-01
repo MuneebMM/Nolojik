@@ -16,8 +16,8 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-white shadow-md">
-      {/* Mobile Header */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3">
+      {/* Mobile and Tablet Header */}
+      <div className="flex items-center justify-between px-4 py-3 lg:hidden">
         <Image src="/Logo.png" alt="Logo" width={140} height={40} className="w-auto h-8" />
         <button 
           onClick={toggleNav} 
@@ -28,65 +28,75 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex flex-row items-center justify-between px-24 py-4">
-        <div className="flex items-center gap-x-16">
+      <div className="hidden lg:flex flex-row items-center justify-between px-6 xl:px-24 py-4">
+        <div className="flex items-center gap-x-8 xl:gap-x-16">
           <Link
             href="/Homepage"
-            className={pathname === '/Homepage' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'}
+            className={`nav-link ${
+              pathname === '/Homepage' ? 'text-blue-600 font-bold' : 'hover:text-blue-400'
+            }`}
           >
             Home
           </Link>
           <Link
             href="/Service"
-            className={pathname === '/Service' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'}
+            className={`nav-link ${
+              pathname === '/Service' ? 'text-blue-600 font-bold' : 'hover:text-blue-400'
+            }`}
           >
             Service
           </Link>
           {pathname === '/Blog' ? (
             <Link
               href="/Products"
-              className={pathname === '/Products' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'}
+              className={`nav-link ${
+                pathname === '/Products' ? 'text-blue-600 font-bold' : 'hover:text-blue-400'
+              }`}
             >
               Products
             </Link>
           ) : (
             <Link
               href="/About"
-              className={pathname === '/About' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'}
+              className={`nav-link ${
+                pathname === '/About' ? 'text-blue-600 font-bold' : 'hover:text-blue-400'
+              }`}
             >
               About Us
             </Link>
           )}
           <Link
             href="/Blog"
-            className={pathname === '/Blog' ? 'nav-link text-blue-600 font-bold' : 'hover:text-blue-400'}
+            className={`nav-link ${
+              pathname === '/Blog' ? 'text-blue-600 font-bold' : 'hover:text-blue-400'
+            }`}
           >
             Blog
           </Link>
         </div>
 
-        <div className="flex-grow flex justify-start pl-48">
+        <div className="flex-grow flex justify-center xl:justify-start xl:pl-48">
           <Image src="/Logo.png" alt="Logo" width={180} height={50} />
         </div>
 
         <div className="flex space-x-4">
           <Link href="/RequestDemo">
-            <button className="px-8 py-2 rounded hover:bg-blue-700 hover:text-white border border-blue-500">
+            <button className="px-4 xl:px-8 py-2 rounded hover:bg-blue-700 hover:text-white border border-blue-500">
               Request a Demo
             </button>
           </Link>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-800 hover:text-white flex items-center space-x-2">
+          <button className="bg-blue-600 text-white px-4 xl:px-6 py-2 rounded hover:bg-blue-800 hover:text-white flex items-center space-x-2">
             <span>Contact</span>
             <Image src="/SendButton.png" alt="Arrow" width={16} height={12} className="w-4 h-3" />
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile and Tablet Navigation Menu */}
       <div
         className={`${
           navOpen ? 'flex flex-col' : 'hidden'
-        } md:hidden bg-white`}
+        } lg:hidden bg-white`}
       >
         <div className="flex flex-col py-4">
           <Link
