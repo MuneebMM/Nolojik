@@ -8,7 +8,7 @@ const ServicePage = () => {
     return (
         <div>
             <Navbar />
-            <div className="min-h-screen bg-gray-50 flex flex-col items-center pt-16 md:pt-32 px-4">
+            <div className=" bg-gray-50 flex flex-col items-center pt-16 md:pt-32 px-4">
                 {/* Heading */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center text-gray-800 mb-4">
                     Pioneering the Future of Digital Solutions
@@ -44,17 +44,20 @@ const ServicePage = () => {
                         Crafting Tomorrows Apps, Today
                     </h3>
                 </div>
-
                 {/* Software Development & Design Section */}
-                <div className="mt-20 md:mt-28 pb-6 px-4 text-center bg-gray-50">
+                <div className="mt-20 pb-6 px-4 text-center bg-gray-50">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">
                         Software <span className="text-blue-500">Development & Design</span>
                     </h1>
                 </div>
+
+                
             </div>
             
             {/* Services Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 md:p-8 bg-gray-50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 md:p-8 gap-3 bg-gray-50">
+
+                
                 {/* Card 1 */}
                 <div className="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
                     <div className="flex justify-center">

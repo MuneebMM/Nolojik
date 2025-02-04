@@ -48,7 +48,7 @@ export default function Homepage() {
           
           {/* Hero Section */}
           <section
-            className="w-full min-h-screen bg-cover bg-center relative px-4 md:px-8"
+            className="min-h-screen bg-cover bg-center relative px-4 md:px-8"
             style={{ backgroundImage: "url('./wallpaper1.jpg')" }}
           >
               <div className="absolute inset-0"></div>

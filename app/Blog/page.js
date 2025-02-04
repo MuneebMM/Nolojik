@@ -23,7 +23,7 @@ const BlogPage = () => {
     <div>
       <Navbar />
       <section
-        className="w-full min-h-screen bg-cover bg-center relative"
+        className="w-full bg-cover bg-center relative"
         style={{ backgroundImage: "url('./wallpaper1.jpg')" }}
       >
         {/* Overlay */}
