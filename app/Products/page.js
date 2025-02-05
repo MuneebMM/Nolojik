@@ -188,11 +188,11 @@ export default function Products() {
 
       {/* Key Features Section */}
       <div className="flex items-center justify-center pb-8">
-        <h1 className="text-3xl md:text-5xl font-bold">
+        <h1 className="text-3xl md:text-5xl font-bold hidden md:block">
           Key <span className="text-blue-500">Features</span>
         </h1>
       </div>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white pb-12 hidden md:block">
+      <div className="flex flex-col items-center justify-center bg-white px-20 pb-12 hidden md:block">
         <Image src="/Features1.png" alt="Features1" width={1300} height={1300} />
       </div>
 
@@ -211,58 +211,72 @@ export default function Products() {
       </div>
 
       {/* QR Code Section */}
-      <div className="relative min-h-screen w-screen flex items-center justify-center py-12 hidden md:block">
+      <div className="relative min-h-screen w-screen flex items-center justify-center py-12 hidden md:block px-20">
         <Image src="/QRCode.png" alt="Center Image" width={1200} height={1000} />
       </div>
 
       {/* Reach Out to Us Section */}
-      <div className="relative min-h-screen w-screen mb-12">
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-blue-500 mb-4 pt-12">Reach Out to Us</h1>
-          <p className="text-gray-700 text-center mb-6">
-            From ReactJS and Android applications to Data Science with Python, we <br />
-            specialize in tailoring solutions to meet your business needs.
-          </p>
+      <div className="relative min-h-screen w-full mb-12">
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-500 mb-4 pt-12 text-center">
+              Reach Out to Us
+            </h1>
+            <p className="text-gray-700 text-center mb-6 hidden">
+              From ReactJS and Android applications to Data Science with Python, we <br />
+              specialize in tailoring solutions to meet your business needs.
+            </p>
 
-          <div className="flex flex-col md:flex-row gap-6">
-            {/* Left Div */}
-            <div className="space-y-6 w-full lg:w-1/2">
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4 pt-3">
-                  <Image src="/Mail.png" alt="Email Icon" width={50} height={50} />
-                  <div>
-                    <p className="text-2xl font-bold">Email Us</p>
+            <div className="flex flex-col lg:flex-row gap-6 w-full max-w-7xl">
+              {/* Left Div */}
+              <div className="space-y-6 w-full lg:w-1/2">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4 pt-3">
+                    <Image src="/Mail.png" alt="Email Icon" width={50} height={50} />
+                    <div>
+                      <p className="text-xl sm:text-2xl font-bold">Email Us</p>
+                    </div>
                   </div>
-                </div>
-                <p className="text-2xl">sales@nolojik.com</p>
-                <div className="flex items-center space-x-4 pt-3">
-                  <Image src="/Call.png" alt="Call Icon" width={50} height={50} />
-                  <div>
-                    <p className="text-2xl font-bold">Call Us</p>
+                  <p className="text-xl sm:text-2xl">sales@nolojik.com</p>
+
+                  <div className="flex items-center space-x-4 pt-3">
+                    <Image src="/Call.png" alt="Call Icon" width={50} height={50} />
+                    <div>
+                      <p className="text-xl sm:text-2xl font-bold">Call Us</p>
+                    </div>
                   </div>
-                </div>
-                <p className="text-2xl">+91 9008108650</p>
-                <div className="flex items-center space-x-4 pt-3">
-                  <Image src="/Location.png" alt="Location Icon" width={50} height={50} />
-                  <div>
-                    <p className="text-2xl font-bold">Office Location</p>
+                  <p className="text-xl sm:text-2xl">+91 9008108650</p>
+
+                  <div className="flex items-center space-x-4 pt-3">
+                    <Image src="/Location.png" alt="Location Icon" width={50} height={50} />
+                    <div>
+                      <p className="text-xl sm:text-2xl font-bold">Office Location</p>
+                    </div>
                   </div>
+                  <p className="text-xl sm:text-2xl">
+                    Nolojik Innovations Private Limited, <br />
+                    No.56, Kalanagar, Kammagondanahalli, <br />
+                    Bangalore-560015
+                  </p>
                 </div>
-                <p className="text-2xl">
-                  Nolojik Innovations Private Limited, <br />
-                  No.56, Kalanagar, Kammagondanahalli, <br />
-                  Bangalore-560015
-                </p>
               </div>
-            </div>
 
-            {/* Right Div */}
-            <div className="w-full md:w-1/2 hidden md:block">
-              <Image src="/Map.png" alt="Map" width={600} height={400} />
+              {/* Right Div */}
+              <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
+                <div className="rounded-lg shadow-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9243.834434181115!2d77.5316069933891!3d13.064060873558425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae2324d0916aa7%3A0x21b7eac4f8ee9d94!2sNolojik%20innovations%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1738754380478!5m2!1sen!2sin"
+                    title="Company Location"
+                    width="100%"
+                    height="400"
+                    className="filter grayscale(50%) contrast(1.2) opacity(0.9)"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
       <Joinus />
       <Footer />

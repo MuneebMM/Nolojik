@@ -91,10 +91,12 @@ export default function Navbar() {
                 Request a Demo
               </button>
             </Link>
-            <button className="bg-blue-600 text-white px-4 xl:px-6 py-2 rounded hover:bg-blue-800 hover:text-white flex items-center space-x-2">
-              <span>Contact</span>
-              <Image src="/SendButton.png" alt="Arrow" width={16} height={12} className="w-4 h-3" />
-            </button>
+            <Link href="/Contact">
+              <button className="bg-blue-600 text-white px-4 xl:px-6 py-2 rounded hover:bg-blue-800 hover:text-white flex items-center space-x-2">
+                <span>Contact</span>
+                <Image src="/SendButton.png" alt="Arrow" width={16} height={12} className="w-4 h-3" />
+              </button>
+            </Link>
           </div>
         </div>
 
